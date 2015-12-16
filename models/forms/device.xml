@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form>
+    <fieldset>
+        <field
+                name="id"
+                type="text"
+                label="COM_HEARTCARE_HEARTCARE_ID_LABEL"
+                description="COM_HEARTCARE_HEARTCARE_NAME_DESC"
+                size="40"
+                class="inputbox"
+                default=""
+        />
+        <field
+                name="device_id"
+                type="text"
+                label="COM_HEARTCARE_HEALTHDATA_DEVICE_ID"
+                description="COM_HEARTCARE_HEALTHDATA_DEVICE_ID"
+                size="40"
+                class="inputbox"
+                default=""
+        />
+        <field
+                name="device_type"
+                type="text"
+                label="COM_HEARTCARE_HEALTHDATA_DATATYPE"
+                description="COM_HEARTCARE_HEALTHDATA_DATATYPE"
+                size="40"
+                class="inputbox"
+                default=""
+        />
+        <field
+                name="register_time"
+                type="calendar"
+                label="COM_HEARTCARE_HEALTHDATA_DEVICE_REGISTER_TIME"
+                description="COM_HEARTCARE_HEALTHDATA_DEVICE_REGISTER_TIME"
+                size="40"
+                class="inputbox"
+                validate="email"
+        />
+        <field
+                name="produce_date"
+                type="calendar"
+                default=""
+                label="COM_HEARTCARE_HEALTHDATA_DEVICE_PRODUCE_DATE"
+                description="COM_HEARTCARE_HEALTHDATA_DEVICE_PRODUCE_DATE"
+                size="40"
+                format="%Y年-%m月-%d日"
+        />
+
+        <field
+                name="service"
+                type="textarea"
+                label="COM_HEARTCARE_HEALTHDATA_DEVICE_SERVICE"
+                description="COM_HEARTCARE_HEALTHDATA_DEVICE_SERVICE"
+
+        />
+    </fieldset>
+</form>
