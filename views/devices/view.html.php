@@ -55,12 +55,12 @@ class HeartCareViewDevices extends JViewLegacy
         //JToolbarHelper::addNew('user.add');
         if($this->canDo->get('core.edit'))
         {
-            JToolbarHelper::editList('user.edit','JTOOLBAR_EDIT');
+            JToolbarHelper::editList('device.edit','JTOOLBAR_EDIT');
         }
 
         if ($this->canDo->get('core.delete'))
         {
-            JToolbarHelper::deleteList('','users.delete','JTOOLBAR_DELETE');
+            JToolbarHelper::deleteList('','devices.delete','JTOOLBAR_DELETE');
         }
 
         if ($this->canDo->get('core.admin'))
