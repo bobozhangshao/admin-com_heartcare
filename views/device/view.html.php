@@ -47,7 +47,7 @@ class HeartCareViewDevice extends JViewLegacy
 
         $isNew = ($this->item->id == 0);
 
-        $title = JText::_('COM_HEARTCARE_MANAGER_HEARTCARE_USER_EDIT');
+        $title = JText::_('COM_HEARTCARE_MANAGER_HEARTCARE_DEVICE_EDIT');
 
         JToolbarHelper::title($title, 'device');
         JToolbarHelper::apply('device.apply');

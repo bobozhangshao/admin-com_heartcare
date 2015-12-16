@@ -34,8 +34,7 @@
                 label="COM_HEARTCARE_HEALTHDATA_DEVICE_REGISTER_TIME"
                 description="COM_HEARTCARE_HEALTHDATA_DEVICE_REGISTER_TIME"
                 size="40"
-                class="inputbox"
-                validate="email"
+                format="%Y-%m-%d %H:%M:%S"
         />
         <field
                 name="produce_date"
@@ -44,7 +43,7 @@
                 label="COM_HEARTCARE_HEALTHDATA_DEVICE_PRODUCE_DATE"
                 description="COM_HEARTCARE_HEALTHDATA_DEVICE_PRODUCE_DATE"
                 size="40"
-                format="%Y年-%m月-%d日"
+                format="%Y-%m-%d"
         />
 
         <field
