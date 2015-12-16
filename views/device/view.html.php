@@ -59,7 +59,6 @@ class HeartCareViewDevice extends JViewLegacy
     //设置浏览器title
     protected function setDocument()
     {
-        //$isNew = ($this->item->id<1);
         $document = JFactory::getDocument();
         $document->setTitle(JText::_('COM_HEARTCARE_DEVICE_EDITING'));
     }

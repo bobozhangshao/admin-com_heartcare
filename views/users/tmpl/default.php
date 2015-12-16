@@ -14,7 +14,6 @@ $listOrder = $this->escape($this->filter_order);
 $listDirn  = $this->escape($this->filter_order_Dir);
 ?>
 <form action="index.php?option=com_heartcare&view=users" method="post" id="adminForm" name="adminForm">
-
     <div class="row-fluid">
         <div class="span6">
             <?php echo JText::_('COM_HEARTCARE_USERS_FILTER'); ?>

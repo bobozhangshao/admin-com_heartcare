@@ -27,7 +27,7 @@ class HeartCareModelDevices extends JModelList
         $query = $db->getQuery(true);
         $query->select('name, username, d.id AS id, d.device_id AS device_id, device_type, user_id, d.register_time AS register_time, d.produce_date AS produce_date, D.service AS service');
         $query->from($db->quoteName('#__health_device') . ' AS d');
-        $query->innerJoin('#__users AS a ON d.user_id = a.id');
+        $query->leftJoin('#__users AS a ON d.user_id = a.id');
 
         $search = $this->getState('filter.search');
         if (!empty($search))
