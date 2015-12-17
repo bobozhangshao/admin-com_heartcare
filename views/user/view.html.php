@@ -38,7 +38,6 @@ class HeartCareViewUser extends JViewLegacy
         parent::display($tpl);
 
         $this->setDocument();
-
     }
 
 
@@ -56,7 +55,6 @@ class HeartCareViewUser extends JViewLegacy
         JToolbarHelper::title($title, 'user');
         JToolbarHelper::apply('user.apply');
         JToolbarHelper::save('user.save');
-        JToolbarHelper::deleteList('','user.delete','JTOOLBAR_DELETE');
         JToolbarHelper::cancel('user.cancel', $isNew? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
     }
 

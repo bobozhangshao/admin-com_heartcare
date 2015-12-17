@@ -44,6 +44,6 @@ defined('_JEXEC') or die('Restricted access');
             </div>
         </fieldset>
     </div>
-    <input type="hidden" name="task" value="" />
+    <input type="hidden" name="task" value="device.edit" />
     <?php echo JHtml::_('form.token'); ?>
 </form>

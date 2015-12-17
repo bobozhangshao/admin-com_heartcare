@@ -13,6 +13,8 @@ class HeartCareViewDevice extends JViewLegacy
     //view form
     protected $form;
     protected $item;
+    protected $state;
+
     public function display($tpl = null)
     {
         $this->form = $this->get('Form');
