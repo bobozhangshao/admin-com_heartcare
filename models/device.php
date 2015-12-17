@@ -26,7 +26,7 @@ class HeartCareModelDevice extends JModelAdmin
      */
     public function getForm($data = array(), $loadData = true)
     {
-        //是从forms中找到user对应
+        //是从forms中找到device对应
         $form = $this->loadForm(
             'com_heartcare.device',
             'device',

@@ -45,13 +45,13 @@
                 size="40"
                 format="%Y-%m-%d"
         />
+        <field name="myimage" type="media" directory="../media/com_heartcare/images" />
 
         <field
                 name="service"
-                type="textarea"
+                type="editor"
                 label="COM_HEARTCARE_HEALTHDATA_DEVICE_SERVICE"
                 description="COM_HEARTCARE_HEALTHDATA_DEVICE_SERVICE"
-
         />
     </fieldset>
 </form>

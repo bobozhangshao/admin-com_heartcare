@@ -55,6 +55,10 @@
 
     <administration>
         <menu link='index.php?option=com_heartcare' img="./media/com_heartcare/images/ECG-16X16.png">COM_HEARTCARE_MENU</menu>
+        <submenu>
+            <menu link="option=com_heartcare" view="users" alt="HeartCare/users">COM_HEARTCARE_MANAGER_USERS</menu>
+            <menu link="option=com_heartcare" view="devices" alt="HeartCare/devices">COM_HEARTCARE_MANAGER_DEVICES</menu>
+        </submenu>
         <files folder="admin">
             <!-- Admin Main File Copy Section-->
             <filename>index.html</filename>
