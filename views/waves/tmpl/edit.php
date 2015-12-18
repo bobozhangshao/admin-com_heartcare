@@ -162,7 +162,7 @@ jQuery(document).ready(function() {
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_heartcare&view=waves&layout=edit&id=' . (int)$this->item->id); ?>"
-      method="post" name="adminForm" id="waves-form">
+      method="post" name="adminForm" id="adminForm">
     <div id="waveshow" style="height: 350px; border: 1px solid #ccc; padding: 1px;"></div>
     <br>
     <div>

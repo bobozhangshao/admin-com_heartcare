@@ -46,14 +46,13 @@ class HeartCareViewDevice extends JViewLegacy
         //隐藏Joomla 管理主菜单
         $input->set('hidemainmenu', true);
 
-        $isNew = ($this->item->id == 0);
 
         $title = JText::_('COM_HEARTCARE_MANAGER_HEARTCARE_DEVICE_EDIT');
 
         JToolbarHelper::title($title, 'device');
         JToolbarHelper::apply('device.apply');
         JToolbarHelper::save('device.save');
-        JToolbarHelper::cancel('device.cancel', $isNew? 'JTOOLBAR_CANCEL' : 'JTOOLBAR_CLOSE');
+        JToolbarHelper::cancel('device.cancel','JTOOLBAR_CLOSE');
     }
 
 
