@@ -5,6 +5,8 @@ CREATE TABLE IF NOT EXISTS `#__health_device`(
   `device_type`           VARCHAR(25)  NOT NULL ,
   `register_time`         DATETIME ,
   `produce_date`          DATE ,
+  `images`                TEXT,
+  `description`           TEXT,
   `service`               TEXT,
   PRIMARY KEY (`id`)
 )DEFAULT CHARSET = utf8;
