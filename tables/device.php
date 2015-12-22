@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted access');
 
 class HeartCareTableDevice extends JTable
 {
-    protected $_jsonEncode = array('images');
+    protected $_jsonEncode = array('images','sensors');
 
     function __construct(&$db)
     {

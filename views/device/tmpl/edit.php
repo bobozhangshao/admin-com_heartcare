@@ -13,13 +13,13 @@ JHtml::_('behavior.formvalidation');
       method="post" name="adminForm" id="adminForm" class="form-validate">
     <?php echo JLayoutHelper::render('joomla.edit.title_alias', $this); ?>
     <div class="form-horizontal">
-        <?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'details')); ?>
-        <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'details', JText::_('COM_HEARTCARE_DEVICE_DETAILS', true)); ?>
+        <?php echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'device_details')); ?>
+        <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'device_details', JText::_('COM_HEARTCARE_DEVICE_DETAILS', true)); ?>
         <fieldset class="adminform">
             <legend><?php echo JText::_('COM_HEARTCARE_DEVICE_DETAILS'); ?></legend>
             <div class="row-fluid">
                 <div class="span6">
-                    <?php foreach ($this->form->getFieldset() as $field): ?>
+                    <?php foreach ($this->form->getFieldset('device_details') as $field): ?>
                         <div class="control-group">
                             <?php if ($field->fieldname != 'service'):?>
                                 <div>
@@ -32,6 +32,26 @@ JHtml::_('behavior.formvalidation');
                 </div>
             </div>
         </fieldset>
+        <?php echo JHtml::_('bootstrap.endTab'); ?>
+        <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'images', JText::_('JGLOBAL_FIELDSET_IMAGE_OPTIONS', true)); ?>
+        <div class="row-fluid">
+            <div class="span6">
+                <?php echo $this->form->getControlGroup('images'); ?>
+                <?php foreach ($this->form->getGroup('images') as $field) : ?>
+                    <?php echo $field->getControlGroup(); ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <?php echo JHtml::_('bootstrap.endTab'); ?>
+        <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'sensors', JText::_('COM_HEARTCARE_HEALTHDATA_DEVICE_SENSORS', true)); ?>
+        <div class="row-fluid">
+            <div class="span6">
+                <?php echo $this->form->getControlGroup('sensors'); ?>
+                <?php foreach ($this->form->getGroup('sensors') as $field) : ?>
+                    <?php echo $field->getControlGroup(); ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
         <?php echo JHtml::_('bootstrap.endTab'); ?>
         <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'service', JText::_('COM_HEARTCARE_HEALTHDATA_DEVICE_SERVICE', true)); ?>
         <fieldset class="adminform">
@@ -49,7 +69,6 @@ JHtml::_('behavior.formvalidation');
                         <?php endif;?>
                     <?php endforeach; ?>
                 </div>
-
             </div>
         </fieldset>
         <?php echo JHtml::_('bootstrap.endTab'); ?>

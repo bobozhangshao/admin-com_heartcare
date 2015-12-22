@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <form addrulepath="/administrator/components/com_heartcare/models/rules">
-    <fieldset>
+    <fieldset name="device_details">
         <field
                 name="id"
                 type="text"
@@ -82,6 +82,58 @@
                 label="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_SECOND"
                 description="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_SECOND"
                 directory="devices"
+            />
+        </fieldset>
+    </fields>
+    <fields name="sensors">
+        <fieldset name="sensors" label="">
+            <field
+                    name="ecg"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ECG"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ECG"
+                    value="1"
+                    default="0"
+            />
+            <field
+                    name="icg"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ICG"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ICG"
+                    value="1"
+                    default="0"
+            />
+            <field
+                    name="deltaZ"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_DELTAZ"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_DELTAZ"
+                    value="1"
+                    default="0"
+            />
+            <field
+                    name="Z0"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ZO"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ZO"
+                    value="1"
+                    default="0"
+            />
+            <field
+                    name="ACC"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ACC"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ACC"
+                    value="1"
+                    default="0"
+            />
+            <field
+                    name="GRRO"
+                    type="checkbox"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_GRRO"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_GRRO"
+                    value="1"
+                    default="0"
             />
         </fieldset>
     </fields>

@@ -85,6 +85,11 @@ class HeartCareModelDevice extends JModelAdmin
             $registry = new Registry;
             $registry->loadString($item->images);
             $item->images = $registry->toArray();
+
+            //Convert the sensors field to an array
+            $registry = new Registry;
+            $registry->loadString($item->sensors);
+            $item->sensors = $registry->toArray();
         }
 
         return $item;
