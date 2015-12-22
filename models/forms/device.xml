@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<form>
+<form addrulepath="/administrator/components/com_heartcare/models/rules">
     <fieldset>
         <field
                 name="id"
@@ -17,7 +17,9 @@
                 label="COM_HEARTCARE_HEALTHDATA_DEVICE_ID"
                 description="COM_HEARTCARE_HEALTHDATA_DEVICE_ID"
                 size="40"
-                class="inputbox"
+                class="inputbox validate-deviceid"
+                validate="deviceid"
+                required="true"
                 default=""
         />
         <field
@@ -26,7 +28,9 @@
                 label="COM_HEARTCARE_HEALTHDATA_DATATYPE"
                 description="COM_HEARTCARE_HEALTHDATA_DATATYPE"
                 size="40"
-                class="inputbox"
+                class="inputbox validate-devicetype"
+                validate="devicetype"
+                required="true"
                 default=""
         />
         <field

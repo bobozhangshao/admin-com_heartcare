@@ -89,4 +89,13 @@ class HeartCareModelDevice extends JModelAdmin
 
         return $item;
     }
+
+    /**
+     * method to get the script that have to be incuded on the form
+     * @return string Script files
+     */
+    public function getScript()
+    {
+        return 'administrator/components/com_heartcare/models/forms/device.js';
+    }
 }

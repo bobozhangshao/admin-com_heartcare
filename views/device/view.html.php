@@ -21,6 +21,7 @@ class HeartCareViewDevice extends JViewLegacy
         //item就是一个用户的对象实例
         $this->item = $this->get('Item');
         $this->state = $this->get('State');
+        $this->script = $this->get('Script');
 
         //check errors
         if(count($errors = $this->get('Errors')))
@@ -55,11 +56,16 @@ class HeartCareViewDevice extends JViewLegacy
         JToolbarHelper::cancel('device.cancel','JTOOLBAR_CLOSE');
     }
 
-
-    //设置浏览器title
+    /**
+     * 设置浏览器title
+     * 添加两个javascript
+     **/
     protected function setDocument()
     {
         $document = JFactory::getDocument();
         $document->setTitle(JText::_('COM_HEARTCARE_DEVICE_EDITING'));
+        $document->addScript(JUri::root().$this->script);
+        $document->addScript(JUri::root()."/administrator/components/com_heartcare/views/device/submitbutton.js");
+        JText::script('COM_HEARTCARE_DEVICE_ID_OR_TYPE_ERROR_UNACCPTABLE');
     }
 }
