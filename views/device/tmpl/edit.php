@@ -35,7 +35,7 @@ JHtml::_('behavior.formvalidation');
         <?php echo JHtml::_('bootstrap.endTab'); ?>
         <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'images', JText::_('JGLOBAL_FIELDSET_IMAGE_OPTIONS', true)); ?>
         <div class="row-fluid">
-            <div class="span6">
+            <div class="span9">
                 <?php echo $this->form->getControlGroup('images'); ?>
                 <?php foreach ($this->form->getGroup('images') as $field) : ?>
                     <?php echo $field->getControlGroup(); ?>

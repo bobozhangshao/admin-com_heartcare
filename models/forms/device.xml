@@ -95,6 +95,17 @@
                     value="1"
                     default="0"
             />
+            <field name="ecg_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ECG_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ECG_DESC"
+                   size="20"
+            />
+            <field name="spacer1"
+                   type="spacer"
+                   hr="true"
+            />
+
             <field
                     name="icg"
                     type="checkbox"
@@ -103,6 +114,17 @@
                     value="1"
                     default="0"
             />
+            <field name="icg_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ICG_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ICG_DESC"
+                   size="20"
+            />
+            <field name="spacer2"
+                   type="spacer"
+                   hr="true"
+            />
+
             <field
                     name="deltaZ"
                     type="checkbox"
@@ -111,6 +133,17 @@
                     value="1"
                     default="0"
             />
+            <field name="deltaZ_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_DELTAZ_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_DELTAZ_DESC"
+                   size="20"
+            />
+            <field name="spacer3"
+                   type="spacer"
+                   hr="true"
+            />
+
             <field
                     name="Z0"
                     type="checkbox"
@@ -119,21 +152,53 @@
                     value="1"
                     default="0"
             />
+            <field name="Z0_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ZO_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ZO_DESC"
+                   size="20"
+            />
+            <field name="spacer4"
+                   type="spacer"
+                   hr="true"
+            />
+
             <field
-                    name="ACC"
+                    name="acc"
                     type="checkbox"
                     label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ACC"
                     description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ACC"
                     value="1"
                     default="0"
             />
+            <field name="acc_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ACC_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_ACC_DESC"
+                   size="20"
+            />
+            <field name="spacer5"
+                   type="spacer"
+                   hr="true"
+            />
+
             <field
-                    name="GRRO"
+                    name="grro"
                     type="checkbox"
                     label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_GRRO"
                     description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_GRRO"
                     value="1"
                     default="0"
+            />
+            <field name="grro_desc"
+                   type="text"
+                   label="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_GRRO_DESC"
+                   description="COM_HEARTCARE_HEALTHDATA_DEVICE_SENSOR_GRRO_DESC"
+                   size="20"
+            />
+            <field name="spacer6"
+                   type="spacer"
+                   hr="true"
             />
         </fieldset>
     </fields>

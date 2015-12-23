@@ -39,7 +39,6 @@ class HeartCareModelDevice extends JModelAdmin
             )
         );
 
-
         if (empty($form))
         {
             return false;
@@ -93,6 +92,188 @@ class HeartCareModelDevice extends JModelAdmin
         }
 
         return $item;
+    }
+
+    /**
+     * Method to save the form data.
+     *
+     * @param   array  $data  The form data.
+     *
+     * @return  boolean  True on success.
+     *
+     * @since   1.6
+     * */
+    public function save($data)
+    {
+        $dispatcher = JEventDispatcher::getInstance();
+        $pk         = (!empty($data['id'])) ? $data['id'] : (int) $this->getState('device.id');
+        $isNew      = true;
+        $table      = $this->getTable();
+        $context    = $this->option . '.' . $this->name;
+        $key = $table->getKeyName();
+
+        // Include the plugins for the on save events.
+        JPluginHelper::importPlugin($this->events_map['save']);
+
+        // Allow an exception to be thrown.
+        try
+        {
+            // Load the row if saving an existing record.
+            if ($pk > 0)
+            {
+                $table->load($pk);
+                $isNew = false;
+            }
+
+            // Bind the data.
+            if (!$table->bind($data))
+            {
+                $this->setError($table->getError());
+
+                return false;
+            }
+
+            // Prepare the row for saving
+            $this->prepareTable($table);
+
+            // Check the data.
+            if (!$table->check())
+            {
+                $this->setError($table->getError());
+
+                return false;
+            }
+
+            // Trigger the before save event.
+            $result = $dispatcher->trigger($this->event_before_save, array($context, $table, $isNew));
+
+            if (in_array(false, $result, true))
+            {
+                $this->setError($table->getError());
+
+                return false;
+            }
+
+            //保存其他device_id相同的条目
+            if(!$isNew){
+                $db1    = $this->getDbo();
+                $query1 = $db1->getQuery(true)
+                    ->select('*')
+                    ->from($db1->quoteName('#__health_device'))
+                    ->where('device_id = '.$db1->quote($this->getItem()->device_id));
+                $db1->setQuery($query1);
+                $result1 = $db1->loadObjectList();
+                foreach($result1 as $i => $row ){
+                    $db = JFactory::getDbo();
+                    $query = $db->getQuery(true);
+                    $images = json_encode($this->getItem()->images);
+                    $sensors = json_encode($this->getItem()->sensors);
+
+                    $fields = array(
+                        $db->quoteName('device_id') . ' = ' . $db1->quote($this->getItem()->device_id),
+                        $db->quoteName('device_type') . ' = '. $db1->quote($this->getItem()->device_type),
+                        $db->quoteName('produce_date') . ' = '. $db1->quote($this->getItem()->produce_date),
+                        $db->quoteName('images') . ' = '. $db1->quote($images),
+                        $db->quoteName('sensors') . ' = '. $db1->quote($sensors),
+                        $db->quoteName('description') . ' = '. $db1->quote($this->getItem()->description),
+                        $db->quoteName('service') . ' = '. $db1->quote($this->getItem()->service)
+                    );
+
+                    $conditions = array(
+                        $db->quoteName('device_id') . ' = ' . $db1->quote($row->device_id),
+                        $db->quoteName('device_type') . ' = ' . $db1->quote($row->device_type)
+                    );
+                    $query->update($db->quoteName('#__health_device'))->set($fields)->where($conditions);
+                    $db->setQuery($query);
+                    $db->loadObjectList();
+                }
+            }
+
+            $isStore = $table->store();
+
+            // Store the data.
+            if (!$isStore)
+            {
+                $this->setError($table->getError());
+
+                return false;
+            }
+
+            // Clean the cache.
+            $this->cleanCache();
+
+            // Trigger the after save event.
+            $dispatcher->trigger($this->event_after_save, array($context, $table, $isNew));
+        }
+        catch (Exception $e)
+        {
+            $this->setError($e->getMessage());
+
+            return false;
+        }
+
+        if (isset($table->$key))
+        {
+            $this->setState($this->getName() . '.id', $table->$key);
+        }
+
+        $this->setState($this->getName() . '.new', $isNew);
+
+        if ($this->associationsContext && JLanguageAssociations::isEnabled())
+        {
+            $associations = $data['associations'];
+
+            // Unset any invalid associations
+            $associations = Joomla\Utilities\ArrayHelper::toInteger($associations);
+
+            // Unset any invalid associations
+            foreach ($associations as $tag => $id)
+            {
+                if (!$id)
+                {
+                    unset($associations[$tag]);
+                }
+            }
+
+            // Show a notice if the item isn't assigned to a language but we have associations.
+            if ($associations && ($table->language == '*'))
+            {
+                JFactory::getApplication()->enqueueMessage(
+                    JText::_(strtoupper($this->option) . '_ERROR_ALL_LANGUAGE_ASSOCIATED'),
+                    'notice'
+                );
+            }
+
+            // Adding self to the association
+            $associations[$table->language] = (int) $table->$key;
+
+            // Deleting old association for these items
+            $db    = $this->getDbo();
+            $query = $db->getQuery(true)
+                ->delete($db->qn('#__associations'))
+                ->where($db->qn('context') . ' = ' . $db->quote($this->associationsContext))
+                ->where($db->qn('id') . ' IN (' . implode(',', $associations) . ')');
+            $db->setQuery($query);
+            $db->execute();
+
+            if ((count($associations) > 1) && ($table->language != '*'))
+            {
+                // Adding new association for these items
+                $key   = md5(json_encode($associations));
+                $query = $db->getQuery(true)
+                    ->insert('#__associations');
+
+                foreach ($associations as $id)
+                {
+                    $query->values(((int) $id) . ',' . $db->quote($this->associationsContext) . ',' . $db->quote($key));
+                }
+
+                $db->setQuery($query);
+                $db->execute();
+            }
+        }
+
+        return true;
     }
 
     /**
