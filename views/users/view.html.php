@@ -76,6 +76,18 @@ class HeartCareViewUsers extends JViewLegacy
         }
     }
 
+    protected function getSortFields()
+    {
+        return array(
+            'name' => JText::_('COM_USERS_HEADING_NAME'),
+            'username' => JText::_('JGLOBAL_USERNAME'),
+            'email' => JText::_('JGLOBAL_EMAIL'),
+            'registerDate' => JText::_('COM_USERS_HEADING_REGISTRATION_DATE'),
+            'id' => JText::_('JGRID_HEADING_ID'),
+            'is_doctor' => JText::_('COM_HEARTCARE_USER_IS_DOCTOR')
+        );
+    }
+
     protected function setDocument()
     {
         $document = JFactory::getDocument();

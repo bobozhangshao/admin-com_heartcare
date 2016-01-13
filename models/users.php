@@ -32,7 +32,9 @@ class HeartCareModelUsers extends JModelList
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
 
-        $query->select('name, username, email, registerDate, id')->from($db->quoteName('#__users'));
+        $query->select('name, username, email, registerDate, a.id AS id, is_doctor, description, doctors');
+        $query->from($db->quoteName('#__users') . ' AS a');
+        $query->leftJoin('#__health_doctor_map AS d ON d.user_id = a.id');
 
         //filter :like/search
         $search = $this->getState('filter.search');

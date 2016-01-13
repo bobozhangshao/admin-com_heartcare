@@ -24,12 +24,12 @@ $listDirn  = $this->escape($this->filter_order_Dir);
         <tr>
             <th width="1%"><?php echo JText::_('COM_HEARTCARE_NUM'); ?></th>
             <th width="2%"><?php echo JHtml::_('grid.checkall'); ?></th>
-            <th width="7%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_HEALTHDATA_DEVICE_ID','device_id', $listDirn, $listOrder); ?></th>
+            <th width="15%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_HEALTHDATA_DEVICE_ID','device_id', $listDirn, $listOrder); ?></th>
             <th width="15%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_HEALTHDATA_DEVICE_TYPE','device_type', $listDirn, $listOrder); ?></th>
-            <th width="25%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_HEALTHDATA_DEVICE_REGISTER_TIME','register_time', $listDirn, $listOrder); ?></th>
+            <th width="20%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_HEALTHDATA_DEVICE_REGISTER_TIME','register_time', $listDirn, $listOrder); ?></th>
             <th width="20%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_NAME','name', $listDirn, $listOrder); ?></th>
             <th width="20%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_USERNAME','username', $listDirn, $listOrder); ?></th>
-            <th width="10%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_USER_ID','user_id', $listDirn, $listOrder); ?></th>
+            <th width="7%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_USER_ID','user_id', $listDirn, $listOrder); ?></th>
         </tr>
         </thead>
 

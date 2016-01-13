@@ -156,4 +156,10 @@ class HeartCareModelUser extends JModelAdmin
         return $result;
 
     }
+
+    //获取医生 todo
+    public function getDoctors()
+    {
+
+    }
 }
