@@ -84,7 +84,7 @@ class HeartCareViewUsers extends JViewLegacy
             'email' => JText::_('JGLOBAL_EMAIL'),
             'registerDate' => JText::_('COM_USERS_HEADING_REGISTRATION_DATE'),
             'id' => JText::_('JGRID_HEADING_ID'),
-            'is_doctor' => JText::_('COM_HEARTCARE_USER_IS_DOCTOR')
+            'cb_is_doctor' => JText::_('COM_HEARTCARE_USER_IS_DOCTOR')
         );
     }
 

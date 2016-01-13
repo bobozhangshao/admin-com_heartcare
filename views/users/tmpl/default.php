@@ -30,7 +30,7 @@ $listDirn  = $this->escape($this->filter_order_Dir);
             <th width="25%"><?php echo JText::_('COM_HEARTCARE_EMAIL'); ?></th>
             <th width="20%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_REGISTERDATE','registerDate', $listDirn, $listOrder); ?></th>
             <th width="7%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_ID','id', $listDirn, $listOrder); ?></th>
-            <th width="5%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_USER_IS_DOCTOR','is_doctor', $listDirn, $listOrder); ?></th>
+            <th width="5%"><?php echo JHtml::_('grid.sort','COM_HEARTCARE_USER_IS_DOCTOR','cb_is_doctor', $listDirn, $listOrder); ?></th>
         </tr>
         </thead>
 
@@ -56,9 +56,9 @@ $listDirn  = $this->escape($this->filter_order_Dir);
             <td><?php echo $row->registerDate; ?></td>
             <td><?php echo $row->id; ?></td>
             <td align="center">
-                <?php if($row->is_doctor) :?>
+                <?php if($row->cb_is_doctor) :?>
                 <span class="icon-ok"> </span>
-                <?php elseif(!$row->is_doctor) :?>
+                <?php elseif(!$row->cb_is_doctor) :?>
                 <span class="icon-delete"> </span>
                 <?php endif;?>
                 </td>
