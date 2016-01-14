@@ -6,16 +6,9 @@ CREATE TABLE IF NOT EXISTS `#__health_device`(
   `register_time`         DATETIME ,
   `produce_date`          DATE ,
   `images`                TEXT,
+  `sensors`               TEXT,
   `description`           TEXT,
   `service`               TEXT,
-  PRIMARY KEY (`id`)
-)DEFAULT CHARSET = utf8;
-
-CREATE TABLE IF NOT EXISTS `#__health_sensor`(
-  `id`                    INT(11)      NOT NULL AUTO_INCREMENT,
-  `sensor_id`             VARCHAR(25)  NOT NULL ,
-  `sensor_name`           VARCHAR(25)  NULL ,
-  `device_type`           VARCHAR(25)  NOT NULL ,
   PRIMARY KEY (`id`)
 )DEFAULT CHARSET = utf8;
 
@@ -35,3 +28,14 @@ CREATE TABLE IF NOT EXISTS `#__health_data_category`(
   `data_type`             VARCHAR(25)  NOT NULL ,
   PRIMARY KEY (`id`)
 )DEFAULT CHARSET = utf8;
+
+INSERT INTO `#__health_data_category` (`data_type`) VALUES
+  ('ECG'),
+  ('ICG'),
+  ('deltaZ'),
+  ('Z0'),
+  ('ACC_X'),
+  ('ACC_Y'),
+  ('ACC_Z'),
+  ('GRRO_X'),
+  ('GRRO_Y');

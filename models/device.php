@@ -39,6 +39,7 @@ class HeartCareModelDevice extends JModelAdmin
             )
         );
 
+
         if (empty($form))
         {
             return false;

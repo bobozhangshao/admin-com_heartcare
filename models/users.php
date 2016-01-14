@@ -25,8 +25,6 @@ class HeartCareModelUsers extends JModelList
         parent::__construct($config);
     }
 
-
-
     protected function getListQuery()
     {
         $db = JFactory::getDbo();

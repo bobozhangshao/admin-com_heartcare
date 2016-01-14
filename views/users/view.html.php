@@ -13,8 +13,6 @@ class HeartCareViewUsers extends JViewLegacy
     //display users的视图
     function display($tpl = null)
     {
-
-
         //获取application
         $app = JFactory::getApplication();
         $context = "heartcare.list.admin.user";
@@ -43,11 +41,9 @@ class HeartCareViewUsers extends JViewLegacy
             return false;
         }
 
+        //设置toolbar, 和sidebar
         HeartCareHelper::addSubmenu('users');
-
-        //设置toolbar, 和
         $this->addToolBar();
-
 
         parent::display($tpl);
 
@@ -76,6 +72,13 @@ class HeartCareViewUsers extends JViewLegacy
         }
     }
 
+    /**
+     * Returns an array of fields the table can be sorted by
+     *
+     * @return  array  Array containing the field name to sort by as the key and display text as value
+     *
+     * @since   3.0
+     */
     protected function getSortFields()
     {
         return array(

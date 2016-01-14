@@ -70,18 +70,18 @@
     <fields name="images">
         <fieldset name="images" label="JGLOBAL_FIELDSET_IMAGE_OPTIONS">
             <field
-                name="image_first"
-                type="media"
-                label="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_FIRST"
-                description="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_FIRST"
-                directory="devices"
+                    name="image_first"
+                    type="media"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_FIRST"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_FIRST"
+                    directory="devices"
             />
             <field
-                name="image_second"
-                type="media"
-                label="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_SECOND"
-                description="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_SECOND"
-                directory="devices"
+                    name="image_second"
+                    type="media"
+                    label="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_SECOND"
+                    description="COM_HEARTCARE_HEALTHDATA_DEVICE_IMAGE_SECOND"
+                    directory="devices"
             />
         </fieldset>
     </fields>

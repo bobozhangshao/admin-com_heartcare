@@ -15,4 +15,9 @@ class HeartCareTableDevice extends JTable
     {
         parent::__construct('#__health_device', 'id', $db);
     }
+
+    public function delete($pk = null)
+    {
+        return parent::delete($pk);
+    }
 }

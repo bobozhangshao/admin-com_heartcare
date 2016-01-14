@@ -34,6 +34,10 @@ class JFormFieldDataType extends JFormFieldList
             }
         }
 
+//        echo "<pre>";
+//        var_dump($options);
+//        echo "</pre>";
+
         $options = array_merge(parent::getOptions(), $options);
         return $options;
     }

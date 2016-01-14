@@ -41,26 +41,5 @@
                 readonly="true"
                 validate="email"
                 />
-        <field
-                name="mycalendar"
-                type="calendar"
-                default=""
-                label="COM_HEARTCARE_SELECT_A_DATE_LABEL"
-                description="COM_HEARTCARE_SELECT_A_DATE_DESC"
-                size="40"
-                format="%Y年-%m月-%d日"
-                onchange="this.form.submit();"
-                />
-
-        <field
-                name="mylistvalue"
-                type="datatype"
-                addfildpath="/administrator/components/com_helloworld/models/fields"
-                label="COM_HEARTCARE_SELECT_AN_OPTION_LABEL"
-                description="COM_HEARTCARE_SELECT_AN_OPTION_DESC"
-                onchange="this.form.submit();"
-                >
-                <option>COM_HEARTCARE_ALL_THE_TYPE</option>
-        </field>
     </fieldset>
 </form>

@@ -81,7 +81,7 @@ class HeartCareViewDevices extends JViewLegacy
             'register_time' => JText::_('COM_HEARTCARE_HEALTHDATA_DEVICE_REGISTER_TIME'),
             'name' => JText::_('COM_USERS_HEADING_NAME'),
             'username' => JText::_('JGLOBAL_USERNAME'),
-            'id' => JText::_('COM_HEARTCARE_USER_ID')
+            'user_id' => JText::_('COM_HEARTCARE_USER_ID')
         );
     }
 

@@ -57,11 +57,11 @@ $listDirn  = $this->escape($this->filter_order_Dir);
             <td><?php echo $row->id; ?></td>
             <td align="center">
                 <?php if($row->cb_is_doctor) :?>
-                <span class="icon-ok"> </span>
+                    <span class="icon-ok"> </span>
                 <?php elseif(!$row->cb_is_doctor) :?>
-                <span class="icon-delete"> </span>
+                    <span class="icon-cancel"> </span>
                 <?php endif;?>
-                </td>
+            </td>
         </tr>
         <?php endforeach; ?>
         <?php endif; ?>
