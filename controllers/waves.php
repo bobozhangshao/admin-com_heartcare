@@ -195,7 +195,7 @@ class HeartCareControllerWaves extends JControllerForm
                 break;
         }
 
-        
+
         return true;
 
     }
